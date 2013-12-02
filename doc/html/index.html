@@ -1,0 +1,74 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>CDFLib library wrapped for Torch</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+      <div class="wrapper">
+          <div id="navcontainer">
+          <ul>
+<li>
+<a href="#toc_0">CDFLib Functions Library, wrapped for Torch</a>
+<ul>
+<li>
+<a href="#toc_1">Example</a>
+</li>
+<li>
+<a href="#toc_2">Installation</a>
+</li>
+<li>
+<a href="#toc_3">Unit Tests</a>
+</li>
+<li>
+<a href="#toc_4">Direct access to FFI</a>
+<ul>
+<li>
+<a href="#toc_5">cdflib.ffi.*</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <section>
+          <h1 id="toc_0">CDFLib Functions Library, wrapped for Torch</h1>
+
+<h2 id="toc_1">Example</h2>
+
+<h2 id="toc_2">Installation</h2>
+
+<p>From a terminal:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">luarocks install cdflib
+</code></pre></div>
+<h2 id="toc_3">Unit Tests</h2>
+
+<p>Last but not least, the unit tests are in the folder
+<a href="https://github.com/jucor/torch-cdflib/tree/master/luasrc/tests"><code>luasrc/tests</code></a>. You can run them from your local clone of the repostiory with:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">git clone https://www.github.com/jucor/torch-cdflib
+find torch-cdflib/luasrc/tests -name <span class="s2">&quot;test*lua&quot;</span> -exec torch <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div>
+<p>Those tests will soone be automatically installed with the package, once I sort out a bit of CMake resistance.</p>
+
+<h2 id="toc_4">Direct access to FFI</h2>
+
+<h3 id="toc_5">cdflib.ffi.*</h3>
+
+<p>Functions directly accessible at the top of the <code>cdflib</code> table are Lua wrappers to the actual C functions from Cephes, with extra error checking. If, for any reason, you want to get rid of this error checking and of a possible overhead, the FFI-wrapper functions can be called directly via <code>cdflib.ffi.myfunction()</code> instead of <code>cdflib.myfunction()</code>.</p>
+
+          </section>
+      </div>
+      <script src="javascripts/scale.fix.js"></script>
+  </body>
+</html>
